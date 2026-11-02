@@ -16,4 +16,14 @@ class ClassroomController extends Controller
             'classrooms' => $classrooms,
         ]);
     }
+
+    public function show(Classroom $classroom)
+    {
+        return view('admin.classroom-show', [
+            'title'     => 'Students in ' . $classroom->name,
+            'classroom' => $classroom,
+            'students'  => $classroom->students,
+        ]);
+    }
+    
 }

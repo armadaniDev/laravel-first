@@ -16,7 +16,11 @@
                 @foreach ($classrooms as $classroom)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <td class="px-6 py-4">{{ $classroom['id'] }}</td>
-                        <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">{{ $classroom['name'] }}</td>
+                        <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                            <a href="/admin/classroom/{{ $classroom['id'] }}" class="hover:underline">
+                                {{ $classroom['name'] }}
+                            </a>
+                        </td>
                         <td class="px-6 py-4">{{ $classroom['major'] }}</td>
                     </tr>
                 @endforeach

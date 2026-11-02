@@ -9,4 +9,18 @@ class Student extends Model
 {
     /** @use HasFactory<\Database\Factories\StudentFactory> */
     use HasFactory;
+
+    protected $with = ['classroom'];
+
+    //tambahkan semua kolom yang boleh diisi massal
+    protected $fillable = [
+        'name',
+        'nis',
+        'classroom_id',
+        'addres'
+    ];
+
+    public function classroom(){
+        return $this->belongsTo(classroom::class, 'classroom_id');
+    }
 }
