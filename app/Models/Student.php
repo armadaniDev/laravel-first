@@ -12,7 +12,6 @@ class Student extends Model
 
     protected $with = ['classroom'];
 
-    //tambahkan semua kolom yang boleh diisi massal
     protected $fillable = [
         'name',
         'nis',

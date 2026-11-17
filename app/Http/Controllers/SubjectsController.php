@@ -18,10 +18,6 @@ class SubjectsController extends Controller
         ]);
     }
 
-    /**
-     * Simpan mata pelajaran baru (dari pop up create).
-     * Guru dihubungkan lewat menu Teachers (teachers.subject_id).
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([

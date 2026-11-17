@@ -26,9 +26,6 @@ class ClassroomController extends Controller
         ]);
     }
 
-    /**
-     * Simpan kelas baru (dari pop up create).
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([

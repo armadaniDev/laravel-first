@@ -16,14 +16,10 @@ class TeachersController extends Controller
             'title'      => 'Teachers',
             'teachers' => $teachers,
             'teachers' => Teacher::with('subject')->get(),
-            // dropdown di pop up create: hanya mapel yang belum punya guru
             'subjects' => Subject::doesntHave('teacher')->orderBy('name')->get(),
         ]);
     }
 
-    /**
-     * Simpan guru baru (dari pop up create).
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([

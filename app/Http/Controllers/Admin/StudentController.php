@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    /**
-     * Tampilkan tabel siswa + data kelas untuk dropdown di pop up.
-     */
     public function index()
     {
         return view('admin.student.index', [
@@ -21,9 +18,6 @@ class StudentController extends Controller
         ]);
     }
 
-    /**
-     * Simpan siswa baru (dari pop up create).
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
